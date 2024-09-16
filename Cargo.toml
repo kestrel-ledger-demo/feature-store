@@ -1,0 +1,13 @@
+[package]
+name = "feature-store"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+redis = { version = "0.25", features = ["tokio-comp", "cluster-async"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+hdrhistogram = "7"
+
+[dev-dependencies]
+criterion = "0.5"
