@@ -9,3 +9,9 @@ Uncertainty: U1 Fresh features at p99 under 50 ms
 Hypothesis: Fixed 10-second buckets avoid the trimming cost.
 What changes: Sorted sets replaced with 10 s bucket counters per card.
 Setup: Same cluster and replay day.
+
+## Result (written the same day)
+
+Result: p99 95 ms at 120k/s; the 1-minute window was off by up to 9% at bucket edges.
+Learned: Buckets fix CPU but break accuracy at the window edge, which the model is sensitive to.
+Outcome: Partly worked
